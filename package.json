@@ -4,11 +4,13 @@
   "description": "A script to inject a website into any website",
   "main": "index.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard",
+    "start": "./node_modules/.bin/http-server"
   },
   "author": "Kanitkorn Sujautra",
   "license": "MIT",
   "devDependencies": {
+    "http-server": "^0.9.0",
     "standard": "^8.5.0"
   }
 }
