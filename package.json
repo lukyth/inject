@@ -4,13 +4,18 @@
   "description": "A script to inject a website into any website",
   "main": "index.js",
   "scripts": {
-    "test": "standard",
+    "test": "./node_modules/.bin/eslint .",
     "start": "./node_modules/.bin/http-server"
   },
   "author": "Kanitkorn Sujautra",
   "license": "MIT",
   "devDependencies": {
-    "http-server": "^0.9.0",
-    "standard": "^8.5.0"
+    "eslint": "^3.10.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard-react": "^4.2.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.7.1",
+    "eslint-plugin-standard": "^2.0.1",
+    "http-server": "^0.9.0"
   }
 }

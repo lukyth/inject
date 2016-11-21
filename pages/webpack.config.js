@@ -14,7 +14,7 @@ module.exports = {
     // the target directory for all output files
     // must be an absolute path (use the Node.js path module)
 
-    filename: 'bundle.js', // string
+    filename: 'bundle.js' // string
     // the filename template for entry chunks
   },
 
