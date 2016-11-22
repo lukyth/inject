@@ -1,6 +1,7 @@
 'use strict'
 
 const path = require('path')
+const autoprefixer = require('autoprefixer')
 
 module.exports = {
   entry: './src/index.js', // string | object | array
@@ -49,6 +50,38 @@ module.exports = {
           ]
         }
         // options for the loader
+      },
+      {
+        test: /\.css$/,
+        include: [
+          path.resolve(__dirname, 'src')
+        ],
+        loaders: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              localIdentName: '[local]__[path][name]__[hash:base64:5]',
+              modules: 1,
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [
+                autoprefixer({
+                  browsers: [
+                    '>1%',
+                    'last 4 versions',
+                    'Firefox ESR',
+                    'not ie < 9' // React doesn't support IE8 anyway
+                  ]
+                })
+              ]
+            }
+          }
+        ]
       }
     ]
   },
