@@ -2,6 +2,9 @@
   "name": "pages",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack -p"
+  },
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.3",
