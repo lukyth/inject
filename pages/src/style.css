@@ -1,7 +1,128 @@
-h1 {
-  background: gray;
+.container {
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+  width: 380px;
+  background: #f9f9f9;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 1px 3px 8px 0 rgba(187, 187, 187, 0.5);
+  font-family: sans-serif;
 }
 
-.div {
-  background: pink;
+.header {
+  padding: 14px 24px 10px;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
+  margin-right: 12px;
+}
+
+.title {
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.arrow {
+  width: 8px;
+  height: 8px;
+  border-bottom: 3px solid #57dd84;
+  border-left: 3px solid #57dd84;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  transition: transform .2s;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  transform: rotate(135deg);
+  top: 18px;
+}
+
+.body {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  padding: 24px 46px;
+  font-size: 15px;
+  position: relative;
+}
+
+.navContainer {
+  width: 30px;
+  height: 30px;
+  background: #feae02;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.navLeftContainer {
+  composes: navContainer;
+  left: 0;
+}
+
+.navRightContainer {
+  composes: navContainer;
+  right: 0;
+}
+
+.nav {
+  width: 8px;
+  height: 8px;
+  border-bottom: 3px solid #f9f9f9;
+  border-left: 3px solid #f9f9f9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.navLeft {
+  composes: nav;
+  transform: rotate(45deg) translate(-60%, -10%);
+}
+
+.navRight {
+  composes: nav;
+  transform: rotate(225deg) translate(80%,-10%);
+}
+
+.content {
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+.name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.date {
+  margin: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.poweredBy {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 700;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
 }
