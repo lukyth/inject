@@ -9,13 +9,31 @@ import logo from './images/simplesat.svg'
 import icon from './images/megaphone.svg'
 
 class Widget extends Component {
+  state = {
+    display: false
+  }
+
+  toggleDisplay = () => {
+    this.setState({ display: !this.state.display })
+  }
+
   render () {
     return (
-      <div className={style.container}>
+      <div
+        className={style.container}
+        style={{
+          transform: `translateY(${this.state.display ? '0' : '238px'})`
+        }}>
         <div className={style.header}>
           <img className={style.icon} src={icon} />
           <span className={style.title}>Recent Feedback</span>
-          <span className={style.arrow} />
+          <span
+            className={style.arrow}
+            style={{
+              transform: `rotate(${this.state.display ? '-45' : '135'}deg)`,
+              top: `${this.state.display ? '14' : '18'}px`
+            }}
+            onClick={this.toggleDisplay} />
         </div>
         <div className={style.body}>
           <div className={style.navLeftContainer}>

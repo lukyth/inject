@@ -44,7 +44,7 @@ module.exports = {
         // see webpack 1 upgrade guide
 
         options: {
-          presets: ['es2015'],
+          presets: ['es2015', 'stage-0'],
           plugins: [
             ['transform-react-jsx', { pragma: 'h' }]
           ]

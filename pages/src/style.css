@@ -8,6 +8,7 @@
   border-top-right-radius: 8px;
   box-shadow: 1px 3px 8px 0 rgba(187, 187, 187, 0.5);
   font-family: sans-serif;
+  transition: transform .3s;
 }
 
 .header {
@@ -33,17 +34,10 @@
   height: 8px;
   border-bottom: 3px solid #57dd84;
   border-left: 3px solid #57dd84;
-  transform: rotate(-45deg);
   position: absolute;
-  top: 14px;
   right: 20px;
-  transition: transform .2s;
+  transition: transform .3s;
   cursor: pointer;
-}
-
-.arrow:hover {
-  transform: rotate(135deg);
-  top: 18px;
 }
 
 .body {
