@@ -88,6 +88,20 @@
   transform: rotate(225deg) translate(80%,-10%);
 }
 
+.slideWrapper {
+  overflow-x: hidden;
+}
+
+.slideContainer {
+  width: 864px;
+  transition: transform 0.4s;
+}
+
+.slideContent {
+  display: inline-block;
+  width: 288px;
+}
+
 .content {
   line-height: 1.6;
   margin-top: 0;
