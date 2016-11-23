@@ -10,11 +10,22 @@ import icon from './images/megaphone.svg'
 
 class Widget extends Component {
   state = {
-    display: false
+    display: false,
+    currentSlide: 0
   }
 
   toggleDisplay = () => {
     this.setState({ display: !this.state.display })
+  }
+
+  moveForward = () => {
+    if (this.state.currentSlide === 2) return
+    this.setState({ currentSlide: this.state.currentSlide + 1 })
+  }
+
+  moveBackward = () => {
+    if (this.state.currentSlide === 0) return
+    this.setState({ currentSlide: this.state.currentSlide - 1 })
   }
 
   render () {
@@ -36,14 +47,14 @@ class Widget extends Component {
             onClick={this.toggleDisplay} />
         </div>
         <div className={style.body}>
-          <div className={style.navLeftContainer}>
+          <div className={style.navLeftContainer} onClick={this.moveBackward}>
             <span className={style.navLeft} />
           </div>
           <div className={style.slideWrapper}>
             <div
               className={style.slideContainer}
               style={{
-                transform: 'translateX(-288px)'
+                transform: `translateX(-${288 * this.state.currentSlide}px)`
               }}>
               <div className={style.slideContent}>
                 <p className={style.content}>As always Mark was extremely responsive, kind, polite and professional in his handling of this ticket. I only have good things to say about Mark's delivery! ...</p>
@@ -62,7 +73,7 @@ class Widget extends Component {
               </div>
             </div>
           </div>
-          <div className={style.navRightContainer}>
+          <div className={style.navRightContainer} onClick={this.moveForward}>
             <span className={style.navRight} />
           </div>
         </div>
