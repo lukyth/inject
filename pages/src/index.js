@@ -11,7 +11,24 @@ import icon from './images/megaphone.svg'
 class Widget extends Component {
   state = {
     display: false,
-    currentSlide: 0
+    currentSlide: 0,
+    feedbacks: [
+      {
+        feedback: `As always Mark was extremely responsive, kind, polite and professional in his handling of this ticket. I only have good things to say about Mark's delivery! ...`,
+        name: `Mark Z.`,
+        date: `November 1, 2016`
+      },
+      {
+        feedback: `As always Mark was extremely responsive, kind, polite and professional in his handling of this ticket. I only have good things to say about Mark's delivery! ...`,
+        name: `Kanitkrn S.`,
+        date: `November 2, 2016`
+      },
+      {
+        feedback: `As always Mark was extremely responsive, kind, polite and professional in his handling of this ticket. I only have good things to say about Mark's delivery! ...`,
+        name: `JFK`,
+        date: `November 3, 2016`
+      }
+    ]
   }
 
   toggleDisplay = () => {
@@ -54,23 +71,16 @@ class Widget extends Component {
             <div
               className={style.slideContainer}
               style={{
+                width: `${288 * this.state.feedbacks.length}px`,
                 transform: `translateX(-${288 * this.state.currentSlide}px)`
               }}>
-              <div className={style.slideContent}>
-                <p className={style.content}>As always Mark was extremely responsive, kind, polite and professional in his handling of this ticket. I only have good things to say about Mark's delivery! ...</p>
-                <p className={style.name}>Mark Z.</p>
-                <p className={style.date}>November 1, 2016</p>
-              </div>
-              <div className={style.slideContent}>
-                <p className={style.content}>As always Mark was extremely responsive, kind, polite and professional in his handling of this ticket. I only have good things to say about Mark's delivery! ...</p>
-                <p className={style.name}>Mark Z.</p>
-                <p className={style.date}>November 1, 2016</p>
-              </div>
-              <div className={style.slideContent}>
-                <p className={style.content}>As always Mark was extremely responsive, kind, polite and professional in his handling of this ticket. I only have good things to say about Mark's delivery! ...</p>
-                <p className={style.name}>Mark Z.</p>
-                <p className={style.date}>November 1, 2016</p>
-              </div>
+              {this.state.feedbacks.map(feedback => (
+                <div className={style.slideContent}>
+                  <p className={style.content}>{feedback.feedback}</p>
+                  <p className={style.name}>{feedback.name}</p>
+                  <p className={style.date}>{feedback.date}</p>
+                </div>
+              ))}
             </div>
           </div>
           <div className={style.navRightContainer} onClick={this.moveForward}>
